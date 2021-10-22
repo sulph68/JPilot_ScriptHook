@@ -8,9 +8,15 @@ any script necessary. This script must be executable for the plugin to run succe
 
 ## Installation
 
-Download the plugin files and copy them into the JPilot directory `~/.jpilot/plugins`.
+Download the plugin files, from release, untar and copy them into the JPilot directory `~/.jpilot/plugins`.
 * libscripthook.la
 * libscripthook.so
+
+```shell
+tar jxvf libscripthook.tar.bz2
+mkdir ~/.jpilot/plugins
+cp libscripthook.la libscriptook.so ~/.jpilot/plugins/
+```
 
 * Create the script called ~/.jpilot/scripthook.sh
 * chmod 755 ~/.jpilot/scripthook.sh

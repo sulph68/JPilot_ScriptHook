@@ -19,7 +19,7 @@ cp libscripthook.la libscriptook.so ~/.jpilot/plugins/
 ```
 
 * Create the script called ~/.jpilot/scripthook.sh
-* chmod 755 ~/.jpilot/scripthook.sh
+* `chmod 755 ~/.jpilot/scripthook.sh`
 
 Restart JPilot and check to make sure that the plugin is enabled.
 Start Jpilot with "-d" (debug mode) and verify if the plugin is running.

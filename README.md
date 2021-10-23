@@ -72,10 +72,13 @@ When used together with `scripthook.sh`, it provides seamless import and export 
 * todoist_import.py - script to import into Todoist
 
 Take note that the scripts will add an extra note into the ToDo record in order to provide the Todoist item ID.
-It does not cover all usage cases but it works well enough for me.
+It does not cover all usage cases but it works well enough for me. Some simple editing might be required for it to work for you. This includes _getting an access token from Todoist_.
 
 The [Todoist Python API](https://developer.todoist.com/sync) was used as a reference.
 The [todoist-export](https://github.com/darekkay/todoist-export) project also served as the initial inspiration to make this happen.
+
+*Note* There is a small function that maps category IDs in PDB to strings. You will need to check the ID mapping on your Palm for it to match correctly.
+
 
 ### Sample scripthook.sh
 

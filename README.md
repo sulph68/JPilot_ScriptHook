@@ -47,7 +47,37 @@ The following arguments are passed to the script during the Hotsync process.
 * EXITCLEANUP
 
 These mirrors the sync stages in JPilot as documented in http://www.jpilot.org/documentation/plugin.html.
-A simple "scripthook.sh" file is shown below.
+A simple `scripthook.sh` file is provided in the scripts directory.
+
+## Sample Usage
+
+A few sample scripts are provided. These might require a little editing to suit your purpose, but they work well enough for mine.
+* scripthook.sh - The initial script that the plugin calls
+
+### Importing and Exporting ToDo from JPilot to CSV
+
+These export the ToDos as read in JPilot into CSV files. It includes the PDB as well as JPilot's PC3 records.
+* jexport_todo_csv.pl - Export ToDo records into CSV, including all unsynced changes
+* jimport_todo_csv.pl - Imports CSV records into JPilot, with changes written into PC3 format for sync
+
+Credit must be given to the author of the [Palm PERL package](https://github.com/madsen/Palm-PDB).
+The [JPilot Plugin Documentation](http://www.jpilot.org/documentation/plugin.html) is also immensely helpful in getting the PC3 integration right. 
+
+### Todoist Integration
+
+These import/export scripts works with ToDoist and generates CSV files in the JPilot CSV format. These are meant to work with the sample jpilot import/export scripts.
+When used together with `scripthook.sh`, it provides seamless import and export of records between Palm and [Todoist](https://todoist.com/).
+
+* todoist_export.py - script to export entries into CSV
+* todoist_import.py - script to import into Todoist
+
+Take note that the scripts will add an extra note into the ToDo record in order to provide the Todoist item ID.
+It does not cover all usage cases but it works well enough for me.
+
+The [Todoist Python API](https://developer.todoist.com/sync) was used as a reference.
+The [todoist-export](https://github.com/darekkay/todoist-export) project also served as the initial inspiration to make this happen.
+
+### Sample scripthook.sh
 
 ```shell
 #!/bin/sh
